@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David's Salon</title>
+    <link rel="shortcut icon" href="assets/images/davidsalon-logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'salon-blue': '#0a1f44',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#f4f4f4]">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 lg:h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl lg:text-3xl font-bold text-salon-blue">
+                        <img src="assets/images/davidsalon-logo.png" alt="Luxe Salon Logo" class="h-16">
+                    </a>
+                </div>
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="index.html" class="relative text-salon-blue font-medium hover:text-gray-600 transition-colors">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-salon-blue"></span>
+                    </a>
+                    <a href="about.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        About
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="service-promos.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        Services & Promos
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="branches.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        Branches
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact-socials.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        Contact & Socials
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="appointment.html" class="hidden sm:inline-flex bg-salon-blue text-white px-6 py-2 hover:bg-opacity-90 transition-colors">
+                        Book Now
+                    </a>
+                    <button id="mobile-menu-button" class="lg:hidden text-salon-blue hover:text-gray-600 transition-colors">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu"
+                class="lg:hidden border-t border-gray-200"
+                style="height: 0; overflow: hidden; opacity: 0; transition: height 0.3s ease, opacity 0.3s ease; visibility: hidden;">
+                <div class="px-2 pt-2 pb-3 space-y-1 text-center">
+                    <a href="index.html" class="block px-3 py-2 text-salon-blue font-medium bg-salon-blue bg-opacity-10">Home</a>
+                    <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">About</a>
+                    <a href="service-promos.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">Services & Promos</a>
+                    <a href="branches.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">Branches</a>
+                    <a href="contact-socials.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">Contact & Socials</a>
+                    <a href="appointment.html" class="block mx-3 mt-4 bg-salon-blue text-white px-4 py-2 text-center">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden -mt-10 sm:mt-0 lg:-mt-8" data-aos="fade-up">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="relative lg:order-2">
+                    <img src="assets/images/hero.jpg" 
+                        alt="Professional hair styling" 
+                        class="w-full object-cover h-48 sm:h-80 md:h-full" />
+                </div>
+                <div class="text-center lg:text-left">
+                    <div class="inline-block px-3 py-1.5 bg-salon-blue bg-opacity-10 text-salon-blue font-medium mb-4 text-sm sm:text-base">
+                        <i class="fas fa-star mr-2"></i>Award-Winning Salon
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-salon-blue mb-4 leading-tight">
+                        Transform Your
+                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-salon-blue to-blue-600">
+                            Beauty Story
+                        </span>
+                    </h1>
+                    <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-6 max-w-md mx-auto lg:mx-0">
+                        Experience luxury and expertise with our premium hair and beauty services. Where artistry meets innovation.
+                    </p>
+                    <div class="flex gap-3 justify-center lg:justify-start">
+                        <a href="appointment.html"
+                        class="bg-salon-blue text-white px-6 py-3 sm:px-8 sm:py-4 font-semibold text-sm sm:text-base hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center shadow-md">
+                            Book Appointment
+                        </a>
+                        <a href="service-promos.html"
+                        class="border-2 border-salon-blue text-salon-blue px-6 py-3 sm:px-8 sm:py-4 font-semibold text-sm sm:text-base hover:bg-salon-blue hover:text-white transition-all duration-300 inline-flex items-center justify-center">
+                            View Services
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 lg:py-24 bg-gray-50" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl lg:text-5xl font-light text-gray-800 mb-8">
+                        How's your hair?
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-salon-blue flex items-center justify-center">
+                                <i class="fas fa-droplet text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 mb-1">Deep Hydration Treatment</h3>
+                                <p class="text-gray-600 text-sm">Intensive moisture therapy for dry and damaged hair</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-salon-blue flex items-center justify-center">
+                                <i class="fas fa-leaf text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 mb-1">Natural Ingredients</h3>
+                                <p class="text-gray-600 text-sm">Organic and eco-friendly hair care products</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-salon-blue flex items-center justify-center">
+                                <i class="fas fa-magic text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 mb-1">Color Protection</h3>
+                                <p class="text-gray-600 text-sm">Advanced formulas to maintain vibrant hair color</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <span class="inline-block bg-yellow-400 text-salon-blue px-4 py-2 font-bold text-lg">
+                            Premium Care
+                        </span>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <img src="https://images.unsplash.com/photo-1717160675489-7779f2c91999?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                                 alt="Hair care products" 
+                                 class="shadow-lg w-full h-48 object-cover">
+                            <img src="https://images.unsplash.com/photo-1712641966879-63f3bc1a47e4?q=80&w=1232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                                 alt="Natural ingredients" 
+                                 class="shadow-lg w-full h-48 object-cover">
+                        </div>
+                        <div class="space-y-4 pt-8">
+                            <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="Hair treatment" 
+                                 class="shadow-lg w-full h-48 object-cover">
+                            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="Salon products" 
+                                 class="shadow-lg w-full h-48 object-cover">
+                        </div>
+                    </div>
+                    <div class="absolute top-4 right-4 bg-white rounded-full p-3 shadow-lg">
+                        <i class="fas fa-heart text-pink-500 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 lg:py-24" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-salon-blue mb-4">Our Salon Experience</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Step into our modern, luxurious space designed for your comfort and transformation</p>
+            </div>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 h-96 lg:h-[500px]">
+                <div class="col-span-2 row-span-2 relative overflow-hidden shadow-lg">
+                    <img src="https://thebusinessmanual-onemega.com/wp-content/uploads/2023/09/Davids-Salon-Philippines-The-Business-Manual.jpg" 
+                         alt="Salon interior" 
+                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-salon-blue/50 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Modern Styling</h3>
+                        <p class="text-sm opacity-90">State-of-the-art equipment and techniques</p>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Hair cutting" 
+                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                
+                <div class="relative overflow-hidden shadow-lg">
+                    <img src="https://cdn.phonebooky.com/blog/wp-content/uploads/2018/10/09162218/BKY-JC-DavidsSalon-1560581.jpg" 
+                         alt="Beauty treatment" 
+                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                
+                <div class="relative overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Salon workspace" 
+                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                
+                <div class="relative overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Salon atmosphere" 
+                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="site-footer"></footer>
+    
+    <script src="js/footer.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

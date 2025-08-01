@@ -27,7 +27,7 @@
             <div class="flex justify-between items-center h-16 lg:h-20">
                 <div class="flex-shrink-0">
                     <a href="index.html" class="text-2xl lg:text-3xl font-bold text-salon-blue">
-                        <img src="assets/images/davidsalon-logo.png" alt="David's Salon Logo" class="h-16">
+                        <img src="imgs/davidsalon-logo.png" alt="David's Salon Logo" class="h-16">
                     </a>
                 </div>
                 <nav class="hidden lg:flex space-x-8">
@@ -189,13 +189,12 @@
     </main>
 
     <footer id="site-footer"></footer>
-    
+
     <script src="js/footer.js"></script>
     <script src="js/main.js"></script>
     <script src="js/search.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const branchSelect = document.getElementById('branch');
             const form = document.getElementById('appointment-form');
             const modal = document.getElementById('success-modal');
             const closeModalBtn = document.getElementById('close-success-modal');
@@ -209,33 +208,63 @@
                 phone: document.getElementById('summary-phone')
             };
 
-            branchSelect.innerHTML = '<option value="">Select a branch...</option>' +
-                (typeof branches !== 'undefined'
-                    ? branches.map(branch =>
-                        `<option value="${branch.name}">${branch.name}</option>`).join('')
-                    : '');
+            // Load branches
+            fetch('/api/branches')
+                .then(response => response.json())
+                .then(branches => {
+                    const branchSelect = document.getElementById('branch');
+                    branchSelect.innerHTML = '<option value="">Select a branch...</option>' +
+                        branches.map(branch => 
+                            `<option value="${branch.name}">${branch.name}</option>`
+                        ).join('');
+                })
+                .catch(error => console.error('Error loading branches:', error));
 
-            form.addEventListener('submit', function (e) {
+            form.addEventListener('submit', async function (e) {
                 e.preventDefault();
 
-                const formData = new FormData(form);
-                summaryFields.branch.textContent = formData.get('branch');
-                summaryFields.date.textContent = formData.get('date');
-                summaryFields.time.textContent = formData.get('time');
-                summaryFields.name.textContent = formData.get('name');
-                summaryFields.email.textContent = formData.get('email');
-                summaryFields.phone.textContent = formData.get('phone');
+                const formData = {
+                    branch: document.getElementById('branch').value,
+                    date: document.getElementById('date').value,
+                    time: document.getElementById('time').value,
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value
+                };
 
-                modal.classList.remove('opacity-0', 'pointer-events-none');
-                modal.classList.add('opacity-100');
+                try {
+                    const response = await fetch('/api/appointments', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData)
+                    });
 
-                setTimeout(() => {
-                    modal.classList.add('opacity-0', 'pointer-events-none');
-                    modal.classList.remove('opacity-100');
-                }, 10000);
+                    if (!response.ok) {
+                        const error = await response.json();
+                        throw new Error(error.message || 'Failed to save appointment');
+                    }
 
-                form.reset();
+                    const data = await response.json();
+                    console.log('Appointment saved:', data);
+
+                    // Update summary fields
+                    Object.keys(summaryFields).forEach(key => {
+                        summaryFields[key].textContent = formData[key];
+                    });
+
+                    // Show success modal
+                    modal.classList.remove('opacity-0', 'pointer-events-none');
+                    modal.classList.add('opacity-100');
+
+                    form.reset();
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert(error.message || 'There was an error saving your appointment. Please try again.');
+                }
             });
+
             closeModalBtn.addEventListener('click', () => {
                 modal.classList.add('opacity-0', 'pointer-events-none');
                 modal.classList.remove('opacity-100');

@@ -6,14 +6,15 @@ const branchSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
+  phones: {
+    type: String,
+    required: true
+  },
   address: {
     type: String,
     required: true
-  },
-  phone: {
-    type: String,
-    required: true
-  },
+  }
+  
 //   operatingHours: {
 //     open: String,
 //     close: String
@@ -22,8 +23,9 @@ const branchSchema = new mongoose.Schema({
 //     type: Boolean,
 //     default: true
 //   }
-}, {
-  timestamps: true
+// }
+// , {
+//   timestamps: true
 });
 
 const Branch = mongoose.model('Branch', branchSchema);

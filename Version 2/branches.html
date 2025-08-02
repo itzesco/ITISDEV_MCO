@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branches | David's Salon</title>
+    <link rel="shortcut icon" href="assets/images/davidsalon-logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'salon-blue': '#0a1f44',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#f4f4f4]">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 lg:h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl lg:text-3xl font-bold text-salon-blue">
+                        <img src="imgs/davidsalon-logo.png" alt="Luxe Salon Logo" class="h-16">
+                    </a>
+                </div>
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="index.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="about.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        About
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="service-promos.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        Services & Promos
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="branches.html" class="relative text-salon-blue font-medium hover:text-gray-600 transition-colors">
+                        Branches
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-salon-blue"></span>
+                    </a>
+                    <a href="contact-socials.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        Contact & Socials
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="appointment.html" class="hidden sm:inline-flex bg-salon-blue text-white px-6 py-2 hover:bg-opacity-90 transition-colors">
+                        Book Now
+                    </a>
+                    <button id="mobile-menu-button" class="lg:hidden text-salon-blue hover:text-gray-600 transition-colors">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu"
+                class="lg:hidden border-t border-gray-200"
+                style="height: 0; overflow: hidden; opacity: 0; transition: height 0.3s ease, opacity 0.3s ease; visibility: hidden;">
+                <div class="px-2 pt-2 pb-3 space-y-1 text-center">
+                    <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">Home</a>
+                    <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">About</a>
+                    <a href="service-promos.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">Services & Promos</a>
+                    <a href="branches.html" class="block px-3 py-2 text-salon-blue font-medium bg-salon-blue bg-opacity-10">Branches</a>
+                    <a href="contact-socials.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">Contact & Socials</a>
+                    <a href="appointment.html" class="block mx-3 mt-4 bg-salon-blue text-white px-4 py-2 text-center">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 min-h-screen">
+        <h1 class="text-3xl font-bold text-salon-blue mb-8 text-center">Our Branches</h1>
+        <div class="mb-8 flex justify-center px-4">
+            <div class="relative w-full max-w-xl">
+              <input id="branch-search" type="text" placeholder="Search for a branch..." class="w-full pl-12 pr-4 py-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-salon-blue text-lg"/>
+              <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
+                <i class="fas fa-search text-lg"></i>
+              </div>
+            </div>
+          </div>          
+        <div id="branches-list" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        </div>
+    </main>
+
+    <footer id="site-footer"></footer>
+    
+    <script src="js/footer.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Socials | David's Salon</title>
+    <link rel="shortcut icon" href="assets/images/davidsalon-logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'salon-blue': '#0a1f44',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#f4f4f4]">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 lg:h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl lg:text-3xl font-bold text-salon-blue">
+                        <img src="imgs/davidsalon-logo.png" alt="Luxe Salon Logo" class="h-16">
+                    </a>
+                </div>
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="index.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="about.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        About
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="service-promos.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        Services & Promos
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="branches.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        Branches
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact-socials.html" class="relative text-salon-blue font-medium hover:text-gray-600 transition-colors">
+                        Contact & Socials
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-salon-blue"></span>
+                    </a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="appointment.html" class="hidden sm:inline-flex bg-salon-blue text-white px-6 py-2 hover:bg-opacity-90 transition-colors">
+                        Book Now
+                    </a>
+                    <button id="mobile-menu-button" class="lg:hidden text-salon-blue hover:text-gray-600 transition-colors">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu"
+                class="lg:hidden border-t border-gray-200"
+                style="height: 0; overflow: hidden; opacity: 0; transition: height 0.3s ease, opacity 0.3s ease; visibility: hidden;">
+                <div class="px-2 pt-2 pb-3 space-y-1 text-center">
+                    <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">Home</a>
+                    <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">About</a>
+                    <a href="service-promos.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">Services & Promos</a>
+                    <a href="branches.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">Branches</a>
+                    <a href="contact-socials.html" class="block px-3 py-2 text-salon-blue font-medium bg-salon-blue bg-opacity-10">Contact & Socials</a>
+                    <a href="appointment.html" class="block mx-3 mt-4 bg-salon-blue text-white px-4 py-2 text-center">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8" data-aos="fade-up">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:items-start">
+            <div class="space-y-4">
+                <section class="bg-white shadow-sm p-4 md:pt-8 md:px-8 border border-gray-100">
+                    <h1 class="text-xl lg:text-2xl font-bold text-salon-blue mb-3">Get in Touch</h1>
+                    <p class="text-xs text-gray-700 mb-4 leading-relaxed">We are also active on social media. You can find us on below addresses.</p>
+                    
+                    <div class="space-y-3 mb-5">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-salon-blue text-base mr-3 mt-1 flex-shrink-0"></i>
+                            <span class="text-sm text-gray-800 break-words">DSI Building, 1251 Cardona St. Poblacion, Makati City</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-salon-blue text-base mr-3 mt-1 flex-shrink-0"></i>
+                            <div class="text-sm text-gray-800">
+                                <span>Head Office Opening Hour: </span>
+                                <span class="font-semibold">8:00 AM – 5:00 PM</span>
+                                <span class="block sm:inline">(Monday – Friday)</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt text-salon-blue text-base mr-3 flex-shrink-0"></i>
+                            <a href="tel:88909098" class="text-sm text-gray-800 hover:text-salon-blue transition-colors duration-200">8890-9098</a>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-salon-blue text-base mr-3 mt-1 flex-shrink-0"></i>
+                            <a href="mailto:info@davidsalon.com.ph" class="text-sm text-gray-800 hover:text-salon-blue transition-colors duration-200 break-all">info@davidsalon.com.ph</a>
+                        </div>
+                    </div>
+                    <hr class="mb-2">
+                    <h2 class="text-base font-bold text-salon-blue mb-1">Follow Us</h2>
+                    <div class="flex space-x-4">
+                        <a target="_blank" href="https://www.facebook.com/Davids.Salon" class="text-salon-blue hover:text-blue-600 transition-colors duration-200" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                        <a target="_blank" href="https://www.instagram.com/davidsalonph/?hl=en" class="text-salon-blue hover:text-pink-500 transition-colors duration-200" aria-label="Instagram">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a target="_blank" href="https://x.com/DavidSalonPH" class="text-salon-blue hover:text-blue-400 transition-colors duration-200" aria-label="Twitter">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/company/david-salon/" class="text-salon-blue hover:text-blue-700 transition-colors duration-200" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                    </div>
+                </section>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <section class="bg-white shadow-sm p-4 border border-gray-100 h-full">
+                        <h2 class="text-base font-bold text-salon-blue mb-2">Promos Inquiry</h2>
+                        <div class="mb-2 flex items-start">
+                            <i class="fas fa-envelope text-salon-blue mr-2 flex-shrink-0 text-sm"></i>
+                            <a href="mailto:davidssalonincorporation@gmail.com" class="text-xs text-gray-800 hover:text-salon-blue transition-colors duration-200 break-all leading-tight">davidssalonincorporation@gmail.com</a>
+                        </div>
+                        <p class="text-xs text-gray-600 ml-5 leading-tight">David's Salon Online Support: Monday - Friday | 08:00 AM - 5:00 PM</p>
+                    </section>
+
+                    <section class="bg-white shadow-sm p-4 border border-gray-100 h-full">
+                        <h2 class="text-base font-bold text-salon-blue mb-2">Retail Products Inquiry</h2>
+                        <div class="mb-2 flex items-start">
+                            <i class="fas fa-envelope text-salon-blue mr-2 flex-shrink-0 text-sm"></i>
+                            <a href="mailto:dsretailinc@gmail.com" class="text-xs text-gray-800 hover:text-salon-blue transition-colors duration-200 break-all leading-tight">dsretailinc@gmail.com</a>
+                        </div>
+                        <p class="text-xs text-gray-600 ml-5 leading-tight">To check the availability of the products, kindly email us.</p>
+                    </section>
+
+                    <section class="bg-white shadow-sm p-4 border border-gray-100 h-full">
+                        <h2 class="text-base font-bold text-salon-blue mb-2">Academy</h2>
+                        <div class="mb-2 flex items-center">
+                            <i class="fab fa-facebook text-salon-blue mr-2 flex-shrink-0 text-sm"></i>
+                            <a href="#" class="text-xs text-gray-800 hover:text-salon-blue transition-colors duration-200">Facebook Page</a>
+                        </div>
+                        <p class="text-xs text-gray-600 ml-5 leading-tight">For inquiries about our Academy Lessons, please contact us here.</p>
+                    </section>
+
+                    <section class="bg-white shadow-sm p-4 border border-gray-100 h-full">
+                        <h2 class="text-base font-bold text-salon-blue mb-2">Be a Franchisee</h2>
+                        <div class="mb-2">
+                            <span class="font-semibold text-xs text-gray-800 block">Marivic Aguibiador</span>
+                            <span class="text-xs text-gray-600">VP – Finance</span>
+                        </div>
+                        <div class="mb-2 flex items-start">
+                            <i class="fas fa-envelope text-salon-blue mr-2 flex-shrink-0 text-sm"></i>
+                            <a href="mailto:Mba@davidsalon.com.ph" class="text-xs text-gray-800 hover:text-salon-blue transition-colors duration-200 break-all leading-tight">Mba@davidsalon.com.ph</a>
+                        </div>
+                        <p class="text-xs text-gray-600 ml-5 leading-tight">For more information about Franchise Opportunities, please contact us.</p>
+                    </section>
+                </div>
+            </div>
+            <div class="lg:h-full">
+                <section class="bg-white shadow-sm p-4 md:p-12 border border-gray-100 flex flex-col">
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-salon-blue mb-3">Send a Message</h2>
+                        <p class="text-sm text-gray-700 mb-6 leading-relaxed">Do you have anything in your mind to tell us? Please don't hesitate to get in touch to us via our contact form.</p>
+                        
+                        <form class="space-y-6 flex-grow flex flex-col" name="contact-form" autocomplete="off">
+                            <div class="relative">
+                                <input type="text" id="name" name="name" required
+                                    class="peer w-full border border-gray-300 px-3 pt-5 pb-2 text-sm rounded 
+                                        focus:outline-none focus:ring-2 focus:ring-salon-blue focus:border-transparent transition-all duration-200" />
+                                <label for="name"
+                                    class="absolute left-3 top-2 text-gray-500 text-xs transition-all 
+                                        peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm 
+                                        peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-gray-600">
+                                    Name
+                                </label>
+                            </div>
+                            <div class="relative">
+                                <input type="email" id="email" name="email" required
+                                    class="peer w-full border border-gray-300 px-3 pt-5 pb-2 text-sm rounded 
+                                        focus:outline-none focus:ring-2 focus:ring-salon-blue focus:border-transparent transition-all duration-200" />
+                                <label for="email"
+                                    class="absolute left-3 top-2 text-gray-500 text-xs transition-all 
+                                        peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm 
+                                        peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-gray-600">
+                                    Email
+                                </label>
+                            </div>
+                            <div class="relative">
+                                <textarea id="message" name="message" rows="6" required
+                                    class="peer w-full border border-gray-300 px-3 pt-5 pb-2 text-sm rounded resize-none 
+                                        focus:outline-none focus:ring-2 focus:ring-salon-blue focus:border-transparent transition-all duration-200 min-h-[120px]"></textarea>
+                                <label for="message"
+                                    class="absolute left-3 top-2 text-gray-500 text-xs transition-all 
+                                        peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm 
+                                        peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-gray-600">
+                                    Message
+                                </label>
+                            </div>
+                            <div class="pt-2">
+                                <button type="submit"
+                                    class="bg-salon-blue text-white px-6 py-2 font-semibold text-sm 
+                                        hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-salon-blue 
+                                        focus:ring-offset-2 transition-colors duration-200 rounded">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <section class="mt-4">
+                    <div class="bg-white shadow-sm border border-gray-100 p-6 text-center">
+                        <p class="text-gray-700 text-sm">
+                            Thank you for reaching out to us! We’re excited to help you look and feel your best. 
+                            A member of our team will get back to you shortly — beauty is just a message away.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <section class="w-full mt-6 shadow-sm border border-gray-200 overflow-hidden">
+            <iframe class="w-full h-60 lg:h-80" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30913.96496447913!2d121.06272!3d14.568556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9ae4287839d%3A0b3ac4a852e85e09!2sDavid%E2%80%99s%20Salon!5e0!3m2!1sen!2sph!4v1718030000000!5m2!1sen!2sph"></iframe>
+        </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+
+    <script src="js/footer.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

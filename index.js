@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-const connectDB = require('./config/database');
+const connectDB = require('./config/config');
 const Appointment = require('./models/appointments');
 const Branch = require('./models/branches');
 
@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/davids_salon')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://admin:ncuqLhxIj74rTPj9@itisdev-davidssalon.v4bhg6r.mongodb.net/')
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Could not connect to MongoDB:', err));
 

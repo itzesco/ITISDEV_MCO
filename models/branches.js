@@ -3,31 +3,17 @@ const mongoose = require('mongoose');
 const branchSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
-    unique: true
-  },
-  phones: {
-    type: String,
     required: true
   },
+  phones: [{
+    type: String
+  }],
   address: {
     type: String,
     required: true
   }
-  
-//   operatingHours: {
-//     open: String,
-//     close: String
-//   },
-//   isActive: {
-//     type: Boolean,
-//     default: true
-//   }
-// }
-// , {
-//   timestamps: true
+}, {
+  timestamps: true
 });
 
-const Branch = mongoose.model('Branch', branchSchema);
-
-module.exports = Branch;
+module.exports = mongoose.model('Branch', branchSchema, 'branches');

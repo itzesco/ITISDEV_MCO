@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="assets/images/davidsalon-logo.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -19,6 +21,73 @@
             }
         }
     </script>
+    <style>
+        /* TomSelect styling */
+        .ts-wrapper.single .ts-control {
+            background: white !important;
+            border: 1px solid #d1d5db !important; 
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            padding: 8px 12px !important; 
+            font-size: inherit !important;
+            line-height: inherit !important;
+            min-height: 40px !important; 
+            height: 40px !important;
+            display: flex !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+        
+        .ts-wrapper.single.focus .ts-control {
+            outline: none !important;
+            border-color: #0A1F45 !important; 
+            box-shadow: 0 0 0 2px #4269b1 !important; 
+        }
+        
+        .ts-wrapper.single .ts-control .ts-input {
+            color: inherit !important;
+            background: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            width: 100% !important;
+            height: auto !important;
+            line-height: normal !important;
+        }
+        
+        .ts-wrapper.single .ts-control .ts-input::placeholder {
+            color: #9ca3af !important; 
+        }
+        
+        .ts-wrapper {
+            background: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            width: 100% !important;
+            display: block !important;
+        }
+        
+        /* Dropdown styling */
+        .ts-dropdown {
+            border: 1px solid #d1d5db !important;
+            border-radius: 0 !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .ts-dropdown .ts-option {
+            padding: 8px 12px !important;
+        }
+        
+        .ts-dropdown .ts-option.active {
+            background: #8b5cf6 !important;
+            color: white !important;
+        }
+        
+        .ts-wrapper.single .ts-control:after {
+            border-color: #6b7280 transparent transparent transparent !important;
+            right: 12px !important;
+        }
+    </style>
 </head>
 
 <body class="bg-[#f4f4f4] min-h-screen flex flex-col">
@@ -111,8 +180,7 @@
                         <label for="branch" class="block text-gray-700 font-medium mb-2">
                             Select Branch
                         </label>
-                        <select id="branch" name="branch" required
-                            class="w-full border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-violet-500">
+                        <select id="branch" name="branch" required>
                             <option value="">Loading branches...</option>
                         </select>
                     </div>
@@ -170,7 +238,7 @@
                         </div>
                         <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Appointment Confirmed!</h2>
                         <p class="text-gray-600 text-lg mb-6">
-                            Thank you for booking with David’s Salon. Here are your appointment details:
+                            Thank you for booking with David's Salon. Here are your appointment details:
                         </p>
                         <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6 text-left text-gray-700">
                             <ul class="space-y-2">
@@ -194,82 +262,127 @@
     <script src="js/main.js"></script>
     <script src="js/search.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('appointment-form');
-            const modal = document.getElementById('success-modal');
-            const closeModalBtn = document.getElementById('close-success-modal');
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('appointment-form');
+        const modal = document.getElementById('success-modal');
+        const closeModalBtn = document.getElementById('close-success-modal');
+        const branchSelect = document.getElementById('branch');
 
-            const summaryFields = {
-                branch: document.getElementById('summary-branch'),
-                date: document.getElementById('summary-date'),
-                time: document.getElementById('summary-time'),
-                name: document.getElementById('summary-name'),
-                email: document.getElementById('summary-email'),
-                phone: document.getElementById('summary-phone')
+        // Fetch branches
+        fetch('/api/branches')
+            .then(response => response.json())
+            .then(branches => {
+            
+            // Sort branches alphabetically 
+            branches.sort((a, b) => a.name.localeCompare(b.name));
+
+            // Empty option first, then fetched branches
+            branchSelect.innerHTML = '<option value=""></option>' + 
+                branches.map(branch =>
+                    `<option value="${branch.name}" data-address="${branch.address}" data-phones="${branch.phones}">
+                        ${branch.name}
+                    </option>`
+                ).join('');
+
+            // Initialize Tom Select 
+            const tomSelectInstance = new TomSelect(branchSelect, {
+                placeholder: "Select or search a branch...",
+                allowEmptyOption: true,
+                maxOptions: 1000,
+                searchField: ['value', 'text'],
+                valueField: 'value',
+                labelField: 'text',
+                sortField: {
+                    field: 'text',
+                    direction: 'asc'
+                },
+                create: false,
+                openOnFocus: true,
+                selectOnTab: true,
+                items: []
+            });
+
+            tomSelectInstance.clear(true);
+            tomSelectInstance.blur();
+        })
+        .catch(error => {
+            branchSelect.innerHTML = '<option value="">Error loading branches</option>';
+            console.error('Error loading branches:', error);
+        });
+
+        branchSelect.addEventListener('change', function() {
+            const selectedOption = branchSelect.options[branchSelect.selectedIndex];
+        });
+
+        const summaryFields = {
+            branch: document.getElementById('summary-branch'),
+            date: document.getElementById('summary-date'),
+            time: document.getElementById('summary-time'),
+            name: document.getElementById('summary-name'),
+            email: document.getElementById('summary-email'),
+            phone: document.getElementById('summary-phone')
+        };
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = {
+                branch: document.getElementById('branch').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value
             };
 
-            // Load branches
-            fetch('/api/branches')
-                .then(response => response.json())
-                .then(branches => {
-                    const branchSelect = document.getElementById('branch');
-                    branchSelect.innerHTML = '<option value="">Select a branch...</option>' +
-                        branches.map(branch => 
-                            `<option value="${branch.name}">${branch.name}</option>`
-                        ).join('');
-                })
-                .catch(error => console.error('Error loading branches:', error));
+            // Validate that a branch is selected
+            if (!formData.branch || formData.branch === '') {
+                alert('Please select a branch before submitting.');
+                return;
+            }
 
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
+            try {
+                const response = await fetch('/api/appointments', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
 
-                const formData = {
-                    branch: document.getElementById('branch').value,
-                    date: document.getElementById('date').value,
-                    time: document.getElementById('time').value,
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    phone: document.getElementById('phone').value
-                };
-
-                try {
-                    const response = await fetch('/api/appointments', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(formData)
-                    });
-
-                    if (!response.ok) {
-                        const error = await response.json();
-                        throw new Error(error.message || 'Failed to save appointment');
-                    }
-
-                    const data = await response.json();
-                    console.log('Appointment saved:', data);
-
-                    // Update summary fields
-                    Object.keys(summaryFields).forEach(key => {
-                        summaryFields[key].textContent = formData[key];
-                    });
-
-                    // Show success modal
-                    modal.classList.remove('opacity-0', 'pointer-events-none');
-                    modal.classList.add('opacity-100');
-
-                    form.reset();
-                } catch (error) {
-                    console.error('Error:', error);
-                    alert(error.message || 'There was an error saving your appointment. Please try again.');
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.message || 'Failed to save appointment');
                 }
-            });
 
-            closeModalBtn.addEventListener('click', () => {
-                modal.classList.add('opacity-0', 'pointer-events-none');
-                modal.classList.remove('opacity-100');
-            });
+                const data = await response.json();
+                
+                Object.keys(summaryFields).forEach(key => {
+                    summaryFields[key].textContent = formData[key];
+                });
+
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.classList.add('opacity-100');
+
+                form.reset();
+                
+                // Reset the TomSelect
+                const tomSelectControl = branchSelect.tomselect;
+                if (tomSelectControl) {
+                    tomSelectControl.clear(true);
+                    tomSelectControl.blur();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert(error.message || 'There was an error saving your appointment. Please try again.');
+            }
         });
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.classList.remove('opacity-100');
+        });
+    });
     </script>
 </body>
 

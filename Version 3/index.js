@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-const connectDB = require('./config/database');
+const connectDB = require('./config/config');
 const Appointment = require('./models/appointments');
 const Branch = require('./models/branches');
 
@@ -11,7 +11,9 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 
 // Connect to MongoDB
-connectDB();
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://admin:ncuqLhxIj74rTPj9@itisdev-davidssalon.v4bhg6r.mongodb.net/')
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('Could not connect to MongoDB:', err));
 
 // Basic routes
 app.get('/api/branches', async (req, res) => {
@@ -42,31 +44,31 @@ app.post('/api/appointments', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/html/index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/about', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/html/about.html'));
+  res.sendFile(path.join(__dirname, 'about.html'));
 });
 
 app.get('/branches', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/html/branches.html'));
+  res.sendFile(path.join(__dirname, 'branches.html'));
 });
 
 app.get('/appointment', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/html/appointment.html'));
+  res.sendFile(path.join(__dirname, 'appointment.html'));
 });
 
 app.get('/service-promos', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/html/service-promos.html'));
+  res.sendFile(path.join(__dirname, 'service-promos.html'));
 });
 
 app.get('/contact-socials', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/html/contact-socials.html'));
+  res.sendFile(path.join(__dirname, 'contact-socials.html'));
 });
 
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });

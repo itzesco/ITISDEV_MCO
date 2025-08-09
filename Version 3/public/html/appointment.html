@@ -116,6 +116,15 @@
                             <option value="">Loading branches...</option>
                         </select>
                     </div>
+                    <div>
+                        <label for="service" class="block text-gray-700 font-medium mb-2">
+                            Select Service
+                        </label>
+                        <select id="service" name="service" required
+                            class="w-full border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-violet-500">
+                            <option value="">Loading services...</option>
+                        </select>
+                    </div>
                     <div class="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
                         <div class="flex-1">
                             <label for="date" class="block text-gray-700 font-medium mb-2">
@@ -199,6 +208,9 @@
             const modal = document.getElementById('success-modal');
             const closeModalBtn = document.getElementById('close-success-modal');
 
+            const branchSelect = document.getElementById('branch');
+            const serviceSelect = document.getElementById('service');
+
             const summaryFields = {
                 branch: document.getElementById('summary-branch'),
                 date: document.getElementById('summary-date'),
@@ -210,15 +222,23 @@
 
             // Load branches
             fetch('/api/branches')
-                .then(response => response.json())
+                .then(res => res.json())
                 .then(branches => {
-                    const branchSelect = document.getElementById('branch');
                     branchSelect.innerHTML = '<option value="">Select a branch...</option>' +
-                        branches.map(branch => 
-                            `<option value="${branch.name}">${branch.name}</option>`
-                        ).join('');
-                })
-                .catch(error => console.error('Error loading branches:', error));
+                        branches.map(b => `<option value="${b._id}">${b.name}</option>`).join('');
+
+                // When branch changes, update services
+                branchSelect.addEventListener('change', () => {
+                    const selectedBranch = branches.find(b => b._id === branchSelect.value);
+                    if (selectedBranch) {
+                        serviceSelect.innerHTML = '<option value="">Select a service...</option>' +
+                            selectedBranch.services.map(s => `<option value="${s}">${s}</option>`).join('');
+                    } else {
+                        serviceSelect.innerHTML = '<option value="">Select a branch first...</option>';
+                    }
+                });
+            })
+            .catch(err => console.error('Error loading branches:', err));
 
             form.addEventListener('submit', async function (e) {
                 e.preventDefault();

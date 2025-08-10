@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service & Promo | David's Salon</title>
+    <link rel="shortcut icon" href="assets/images/davidsalon-logo.png" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "salon-blue": "#0a1f44",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-[#f4f4f4]">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 lg:h-20">
+                <div class="flex-shrink-0">
+                    <a href="/html/index.html" class="text-2xl lg:text-3xl font-bold text-salon-blue">
+                        <img src="/imgs/davidsalon-logo.png" alt="Luxe Salon Logo" class="h-16" />
+                    </a>
+                </div>
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="/html/index.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        Home
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="/html/about.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        About
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="/html/service-promos.html"
+                        class="relative text-salon-blue font-medium hover:text-gray-600 transition-colors">
+                        Services & Promos
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-salon-blue"></span>
+                    </a>
+                    <a href="/html/branches.html"
+                        class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        Branches
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="/html/contact-socials.html"
+                        class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        Contact & Socials
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="/html/appointment.html"
+                        class="hidden sm:inline-flex bg-salon-blue text-white px-6 py-2 hover:bg-opacity-90 transition-colors">
+                        Book Now
+                    </a>
+                    <button id="mobile-menu-button"
+                        class="lg:hidden text-salon-blue hover:text-gray-600 transition-colors">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu"
+                class="lg:hidden border-t border-gray-200"
+                style="height: 0; overflow: hidden; opacity: 0; transition: height 0.3s ease, opacity 0.3s ease; visibility: hidden;">
+                <div class="px-2 pt-2 pb-3 space-y-1 text-center">
+                    <a href="/html/index.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">Home</a>
+                    <a href="/html/about.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">About</a>
+                    <a href="/html/service-promos.html" class="block px-3 py-2 text-salon-blue font-medium bg-salon-blue bg-opacity-10">Services & Promos</a>
+                    <a href="/html/branches.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">Branches</a>
+                    <a href="/html/contact-socials.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">Contact & Socials</a>
+                    <a href="/html/appointment.html" class="block mx-3 mt-4 bg-salon-blue text-white px-4 py-2 text-center">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-16 px-4 max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <div class="relative overflow-hidden group h-56 sm:h-72 lg:h-96 flex-1" data-aos="fade-up">
+                <div id="services-carousel" class="flex transition-transform duration-500 ease-in-out h-full">
+                    <img src="/imgs/carousel-1.png" alt="Service 1"
+                        class="w-full h-full object-cover flex-shrink-0 max-w-full" />
+                    <img src="/imgs/carousel-2.png" alt="Service 2"
+                        class="w-full h-full object-cover flex-shrink-0 max-w-full" />
+                    <img src="/imgs/carousel-3.png" alt="Service 3"
+                        class="w-full h-full object-cover flex-shrink-0 max-w-full" />
+                </div>
+                <button
+                    class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-10 text-white px-3 py-2 rounded-full"
+                    onclick="prevSlide('services-carousel')">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button
+                    class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-10 text-white px-3 py-2 rounded-full"
+                    onclick="nextSlide('services-carousel')">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="relative overflow-hidden group h-56 sm:h-72 lg:h-96 flex-1" data-aos="fade-up">
+                <div id="promos-carousel" class="flex transition-transform duration-500 ease-in-out h-full">
+                    <img src="/imgs/carousel-4.png" alt="Promo 1"
+                        class="w-full h-full object-cover flex-shrink-0 max-w-full" />
+                    <img src="/imgs/carousel-5.png" alt="Promo 2"
+                        class="w-full h-full object-cover flex-shrink-0 max-w-full" />
+                    <img src="/imgs/carousel-6.png" alt="Promo 3"
+                        class="w-full h-full object-cover flex-shrink-0 max-w-full" />
+                </div>
+                <button
+                    class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-10 text-white px-3 py-2 rounded-full"
+                    onclick="prevSlide('promos-carousel')">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button
+                    class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-10 text-white px-3 py-2 rounded-full"
+                    onclick="nextSlide('promos-carousel')">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-4 max-w-7xl mx-auto">
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="bg-white border shadow p-6" data-aos="fade-up">
+                <h3 class="text-lg font-semibold text-salon-blue mb-4 text-center">
+                    Hair Services
+                </h3>
+                <ul class="text-gray-700 space-y-2 text-sm">
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Haircut
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Shampoo &
+                        Blowdry
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Hair Color
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Treatment
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Rebonding
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Relaxing
+                    </li>
+                    <li><i class="fa fa-check-circle text-salon-blue mr-2"></i>Perm</li>
+                </ul>
+            </div>
+
+            <div class="bg-white border shadow p-6" data-aos="fade-up" data-aos-delay="50">
+                <h3 class="text-lg font-semibold text-salon-blue mb-4 text-center">
+                    Hair & Make-up
+                </h3>
+                <ul class="text-gray-700 space-y-2 text-sm">
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Hair &
+                        Make-up
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Full
+                        Make-up
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Air Brush
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Shampoo
+                        Setting
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Elaborate
+                        Upstyle
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white border shadow p-6" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-lg font-semibold text-salon-blue mb-4 text-center">
+                    Waxing & Threading
+                </h3>
+                <ul class="text-gray-700 space-y-2 text-sm">
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Eyebrow
+                        Threading / Waxing
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Upper Lip
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Lower Lip
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Bikini Wax
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Brazilian
+                        Wax
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white border shadow p-6" data-aos="fade-up" data-aos-delay="150">
+                <h3 class="text-lg font-semibold text-salon-blue mb-4 text-center">
+                    Nail & Foot Care
+                </h3>
+                <ul class="text-gray-700 space-y-2 text-sm">
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Manicure
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Pedicure
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Gel Polish
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Gel Polish
+                        Removal
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Nail Art
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Nail
+                        Extension
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Foot Spa
+                    </li>
+                    <li>
+                        <i class="fa fa-check-circle text-salon-blue mr-2"></i>Foot Reflex
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="mt-10 bg-yellow-50 border-l-4 border-yellow-400 p-5 text-sm text-yellow-800 text-center max-w-3xl mx-auto leading-relaxed">
+            <p class="mb-2">
+                <i class="fa-solid fa-asterisk"></i> Prices are quoted at a minimum and may vary depending on hair
+                length. Please consult with your stylist for possible additional
+                charges.
+            </p>
+            <p><i class="fa-solid fa-asterisk"></i> Prices may also vary depending on the branch location.</p>
+        </div>
+
+        <section class="py-16 px-4 max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-10 mb-16" data-aos="fade-up">
+                <div class="w-full lg:w-1/2">
+                    <img src="https://www.davidsalon.com.ph/wp-content/uploads/2025/05/0506.jpg"
+                        alt="Cheeky Monkeys Promo" class="w-full h-full object-cover" />
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-3">
+                        Cheeky Monkeys
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-4 text-justify text-sm">
+                        Treat your little ones (and yourself!) to a fantastic deal!
+                        David's Salon has partnered with Cheeky Monkeys to offer an
+                        exclusive treat. Enjoy
+                        <span class="font-semibold text-salon-blue">20% OFF</span> on
+                        Major Hair Services at selected David's Salon branches. Pamper
+                        yourself with a new look while the kids have a blast at Cheeky
+                        Monkeys! This special offer is for a limited time only at
+                        participating David's Salon locations.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed text-sm">
+                        <span class="font-semibold text-salon-blue text-base">Participating branches:</span><br />
+                        SM Mall of Asia South and North Wing<br />
+                        Waltermart Macapagal<br />
+                        Dela Rosa Carpark 1<br />
+                        SM Makati
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-10" data-aos="fade-up">
+                <div class="w-full lg:w-1/2">
+                    <img src="https://www.davidsalon.com.ph/wp-content/uploads/2023/02/priviledge_card.jpeg"
+                        alt="Privilege Card" class="w-full h-full object-cover" />
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-3">
+                        Privilege Card
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-4 text-justify text-sm">
+                        Get the one card that brings out the best in you – the David’s
+                        Salon Privilege Card! Cardholders get an amazing
+                        <span class="font-semibold text-salon-blue">15% discount</span> on
+                        all hair services in all David’s Salon branches every day, any day
+                        of the year, for two years!
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-4 text-justify text-sm">
+                        To get a DPC, fill up an application form at any David’s Salon
+                        branch and pay a fee of P200. Immediately, you can get your
+                        favorite hair services, like haircuts, hair color, rebonding,
+                        perming, keratin, and hair treatments with a discount!
+                    </p>
+                    <p class="text-gray-700 leading-relaxed text-justify text-sm">
+                        With the DPC, you are sure to get world-class services at a great
+                        price.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <footer id="site-footer"></footer>
+    <script src="/js/footer.js"></script>
+    
+    <script src="/js/main.js"></script>
+    <script src="/js/carousel.js"></script>
+</body>
+
+</html>

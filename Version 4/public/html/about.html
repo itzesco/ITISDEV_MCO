@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | David's Salon</title>
+    <link rel="shortcut icon" href="assets/images/davidsalon-logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'salon-blue': '#0a1f44',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#f4f4f4]">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 lg:h-20">
+                <div class="flex-shrink-0">
+                    <a href="/html/index.html" class="text-2xl lg:text-3xl font-bold text-salon-blue">
+                        <img src="/imgs/davidsalon-logo.png" alt="Luxe Salon Logo" class="h-16">
+                    </a>
+                </div>
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="/html/index.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="/html/about.html" class="relative text-salon-blue font-medium hover:text-gray-600 transition-colors">
+                        About
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-salon-blue"></span>
+                    </a>
+                    <a href="/html/service-promos.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        Services & Promos
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="/html/branches.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        Branches
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="/html/contact-socials.html" class="relative text-gray-700 hover:text-salon-blue transition-colors group">
+                        Contact & Socials
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-salon-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="/html/appointment.html" class="hidden sm:inline-flex bg-salon-blue text-white px-6 py-2 hover:bg-opacity-90 transition-colors">
+                        Book Now
+                    </a>
+                    <button id="mobile-menu-button" class="lg:hidden text-salon-blue hover:text-gray-600 transition-colors">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu"
+                class="lg:hidden border-t border-gray-200"
+                style="height: 0; overflow: hidden; opacity: 0; transition: height 0.3s ease, opacity 0.3s ease; visibility: hidden;">
+                <div class="px-2 pt-2 pb-3 space-y-1 text-center">
+                    <a href="/html/index.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">Home</a>
+                    <a href="/html/about.html" class="block px-3 py-2 text-salon-blue font-medium bg-salon-blue bg-opacity-10">About</a>
+                    <a href="/html/service-promos.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">Services & Promos</a>
+                    <a href="/html/branches.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">Branches</a>
+                    <a href="/html/contact-socials.html" class="block px-3 py-2 text-gray-700 hover:text-salon-blue hover:bg-salon-blue hover:bg-opacity-5 rounded-lg transition-colors">Contact & Socials</a>
+                    <a href="/html/appointment.html" class="block mx-3 mt-4 bg-salon-blue text-white px-4 py-2 text-center">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-16 lg:py-24" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col-reverse md:flex-row items-center justify-center gap-10">
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-salon-blue mb-4">Founder</h2>
+                    <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-6">David Charlton</h3>
+
+                    <div class="space-y-4 text-gray-700 leading-relaxed text-sm">
+                        <p class="text-justify">
+                            David Charlton was born in Suderland, in Tyne and Wear, England, and was exposed to hairdressing at a very early age. Charlton came from a family of hairdressers—one of the most sought-after careers in England. At 16, he was working full-time at his uncle’s salon while studying at the Durham Technical College. After 3 years of studying, Charlton passed with distinction the City and Guilds of London Institute Examination in Men’s and Ladies’ Hairdressing. This distinction opened the opportunity for Charlton to go back to Tyne and Wear, this time in South Shields, to teach hairdressing. He also conducted workshops for the North East Hairdressers’ Federation.
+                        </p>
+                        <p class="text-justify">
+                            It was in 1978 when Charlton came to the Philippines. He was the manager of Rever Salon at the Mandarin Oriental Hotel, and after becoming a partner and later on its sole owner, Charlton expanded the Rever Salon to five locations. In 1989, after seeing a need for a salon that would offer high-quality hairdressing at a customer-friendly price, Charlton established David’s Salon Inc. With the desire to share his expertise to more Filipinos, he opened the very first David’s Salon in New Farmer’s Market in Cubao, Quezon City.
+                        </p>
+                        <p class="text-justify">
+                            A realization of a need that has opened many opportunities, David’s Salon not just shared a unique style to many Filipinos, but likewise opened employment and skill acquisition opportunities for many promising Filipino stylists. Now the largest chain of salons in the Philippines, David’s Salon has 200 branches, and counting. Salons are present in key locations in the Greater Manila Area as well as in the provinces. In 2008, the first US branch of David’s Salon opened in Los Angeles, California, and in February 2010, the first David’s Salon branch in the Middle East opened in Dubai.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <img src="https://www.davidsalon.com.ph/wp-content/uploads/2025/02/DC2-1024x1536.jpg" 
+                        alt="David Charlton - Founder" 
+                        class="h-full w-[350px] md:w-[400px] object-cover shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 lg:py-24 bg-gray-50" data-aos="fade-up">
+        <div class="mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center flex items-center justify-center mb-16">
+                <h1 class="max-w-[800px] text-xl md:text-5xl font-bold text-gray-800 mb-8 leading-tight">
+                    Whoever you are, whatever you do, we bring out the best in you
+                </h1>
+            </div>
+            <div class="flex items-center justify-center">
+                <div class="max-w-[800px] mx-auto space-y-6 text-sm text-gray-700 leading-relaxed">
+                    <p class="text-justify">
+                        David’s Salon offers world-class hairdressing, fueled by Filipino passion. With the vision of bringing Fine European hairdressing to the Philippines, CEO David Charlton and the David’s Salon’s brand has made a name for itself, offering a wide range of hair and beauty services to a wide range of customers. It is a name that has been admired and followed by many Filipinos since its first salon opened in 1989. It is now the biggest chain of salons in the Philippines, with over 200 branches all over the country.
+                    </p>
+
+                    <p class="text-justify">
+                        “We take pride in providing the highest quality of service at prices everyone can afford,” says Charlton. David’s Salon’s roster of services include Hair Styling, Hair Color, Hair and Scalp Treatments, Perming, Relaxing, Rebonding, Make Up, Waxing/Threading, Nail Care, and Hand and Foot Spas.
+                    </p>
+
+                    <p class="text-justify">
+                        A trusted salon brand such as David’s Salon works with different trusted suppliers for hair color, hair care, and other forms of technologies used for hair styling. Among these suppliers are L’Oreal, USA’s Professional MATRIX, Affinage Infiniti, and Schwarzkopf & Henkel.
+                    </p>
+
+                    <p class="text-justify">
+                        Total customer satisfaction is the goal of David’s Salon. The David’s Salon Experience is one where customers are given a relaxing ambience, professional consultations from creative stylists, and personal assistance by store managers and store assistants.
+                    </p>
+
+                    <p class="text-justify">
+                        Clients are pampered as they are given quality service with professional care coming from a well-trained team. David’s Salon has a solid core business management team equipped themselves with the latest and most innovative European hairdressing technology, which they generously and systematically pass on to every David’s Salon stylist.
+                    </p>
+                </div>
+            </div>        
+        </div>
+    </section>
+
+    <section class="py-16 lg:py-24" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-2xl lg:text-4xl font-bold text-salon-blue mb-4">CEO and President</h2>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-6">Laura Charlton</h3>
+
+                    <div class="space-y-4 text-gray-700 leading-relaxed text-sm">
+                        <p class="text-justify">
+                            Laura Charlton is not only blessed with the same hairdressing skills that her father has – she is also not afraid to step out and forge her own path. The daughter of founder David Charlton, she grew up in England and started her career when she was only 16 years old. She was trained at the England South Tyne Side College and successfully completed her City&Guilds National Vocational Qualifications – Level 2 and 3 in Hairdressing, and Level 2 in Beauty Therapy, Advanced Nail Techniques, and Media Makeup. She started working at salons in England quickly after getting her Diploma in Hairdressing. Not one to rest on her laurels, she also trained with the prestigious Vidal Sassoon Academy in London for Advanced Cut and Color as well as Creative Cut and Color in 2007. In the same year, she came to the Philippines to be part of David’s Salon. Her first assignment was in David’s Salon Xiamen, China, where she stayed for 2 years. After that, she was posted in Manila, and served clients in The Podium, Pacific Star, and Mall of Asia branches.
+                        </p>
+                        <p class="text-justify">
+                            A hairdressing powerhouse who has also trained in multiple fields of beauty, she headed the Beauty Department of David’s Salon, which specializes in nails, hair removal, lash extension, and spa services. She is also an in-demand brand ambassador, and has worked with not only some of the top international hairdressing brands but also international stylists. She has conducted extensive trainings and seminars nationwide to stylists and beauty professionals alike.
+                        </p>
+                        <p class="text-justify">
+                            In late 2024, she assumed the role of Chief Executive Officer. Always innovating and pushing for new services and strategies that would serve the needs of clients, Laura is a dynamic game-changer who keeps David’s Salon ahead of the curve.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <img src="https://www.davidsalon.com.ph/wp-content/uploads/2025/07/a-1024x1536.jpg" 
+                        alt="Sarah Mitchell - CEO" 
+                        class="shadow-2xl w-96 h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 lg:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-salon-blue mb-4">Our Team</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Meet the talented professionals who make David's Salon a leader in beauty and wellness</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12 mb-20">
+                <div class="text-center" data-aos="fade-up">
+                    <img src="https://www.davidsalon.com.ph/wp-content/uploads/2025/02/MG_5049S.jpg" 
+                        alt="Jeng Sy" 
+                        class="w-full max-w-xs mx-auto object-cover mb-6 max-h-[600px]">
+                    <h3 class="text-xl font-semibold text-salon-blue mb-2">Jeng Sy</h3>
+                    <p class="text-gray-600 text-sm">Retail Department Manager</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://www.davidsalon.com.ph/wp-content/uploads/2025/02/MG_5283S.jpg" 
+                        alt="Lorna Sandoval" 
+                        class="w-full max-w-xs mx-auto object-cover mb-6 max-h-[600px]">
+                    <h3 class="text-xl font-semibold text-salon-blue mb-2">Lorna Sandoval</h3>
+                    <p class="text-gray-600 text-sm">Academy Training Director</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://www.davidsalon.com.ph/wp-content/uploads/2025/02/MG_5126-EditedS.jpg" 
+                        alt="Hanna Riñon de Grano" 
+                        class="w-full max-w-xs mx-auto object-cover mb-6 max-h-[600px]">
+                    <h3 class="text-xl font-semibold text-salon-blue mb-2">Hanna Riñon de Grano</h3>
+                    <p class="text-gray-600 text-sm">Purchasing Department Manager</p>
+                </div>
+            </div>
+            <div class="space-y-20">
+                <div class="flex flex-col-reverse lg:flex-row items-center gap-10" data-aos="fade-up">
+                    <div class="w-full lg:w-1/2 space-y-4 text-gray-700 leading-relaxed text-sm">
+                        <h3 class="text-2xl font-bold text-salon-blue mb-2">Marivic Aguibiador</h3>
+                        <p class="text-base text-gray-600 mb-2">Executive Vice President for Finance and Operations</p>
+                        <p class="text-justify">
+                            With her nurturing personality and wise advice to all those who approach her, it is no wonder that everybody fondly calls her “mother”. Marivic Aguibiador started with David’s Salon in 1987 as an Accounting Clerk, and is a licensed CPA. She is a graduate of the University of the East, with a BSBA Major in Accounting degree. However, her love for the brand and passion to help others allowed her to fearlessly take on bigger tasks and projects beyond accounting. Largely responsible for the rapid growth of David’s Salon in its early days in the 90s, she embraced the challenge of expanding and growing of the then-unknown salon through franchising and strategic partnerships.
+                        </p>
+                        <p class="text-justify">
+                            As the Executive Vice President of Finance and Operations, she works on the accounting, operations, and business side of David’s Salon. With a pulse for the future and a heart for service, she makes sure that the salons are running in tip-top shape, giving clients value for their money, and with a motivated and cheerful staff.
+                        </p>
+                    </div>
+                    <div class="w-full lg:w-1/2 flex justify-center">
+                        <img src="https://www.davidsalon.com.ph/wp-content/uploads/2025/02/MG_5650MBPortrait-1.jpg" 
+                            alt="Marivic Aguibiador" 
+                            class="w-[300px] md:w-[400px] object-cover">
+                    </div>
+                </div>
+                <div class="flex flex-col-reverse lg:flex-row-reverse items-center gap-10" data-aos="fade-up">
+                    <div class="w-full lg:w-1/2 space-y-4 text-gray-700 leading-relaxed text-sm">
+                        <h3 class="text-2xl font-bold text-salon-blue mb-2">Maria Luisa Flores</h3>
+                        <p class="text-base text-gray-600 mb-2">Vice President for Human Resources</p>
+                        <p class="text-justify">
+                            Maria Luisa Flores is proof that hard work, good ethics, and kindness go a long way. A graduate of San Sebastian College of Recoletos, Bachelor of Science Tourism, Ms. Malou started in 1991 as a Roving Receptionist of Revér Salon Mandarin. Working alongside Mr. David Charlton in handling the elite Makati salon, she learned how to deal with clients and stylists with finesse and grace. She quickly rose through ranks and was promoted to Assistant Receptionist, and eventually became the Head Receptionist.
+                        </p>
+                        <p class="text-justify">
+                            When Charlton created David’s Salon, she was a natural choice to be part of the HR Department. She started as an HR Assistant at the Rever Training Center, and then was promoted to HR Manager of the David's and Rever Training Center. David’s Salon requires a large workforce, and the Human Resources department is always on the lookout for fresh talent. But more than recruitment, HR also finds ways to develop the skills of every person in David’s Salon, while keeping their jobs fun and rewarding.
+                        </p>
+                        <p class="text-justify">
+                            Since she stepped up as the Vice President of HR in 2002, she has led the HR team to fulfill the manpower requirements and obligations of all David’s Salons. She also seeks out opportunities and partnerships with organizations, allowing David’s Salon to give back and reach out to communities in need.
+                        </p>
+                        <p class="text-justify">
+                            Always pleasantly smiling and with a good word for everyone, this poised lady leads the Human Resources Department with not just decades of experience, but also an eagerness to serve others. Having started from the bottom, she always has a heart for the welfare of all staff, and believes that with proper training and guidance, anyone can succeed in life.
+                        </p>
+                    </div>
+                    <div class="w-full lg:w-1/2 flex justify-center">
+                        <img src="https://www.davidsalon.com.ph/wp-content/uploads/2025/02/MG_5592MF-Portrait-1.jpg" 
+                            alt="Maria Luisa Flores" 
+                            class="w-[300px] md:w-[400px] object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="site-footer"></footer>
+    
+    <script src="/js/footer.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
